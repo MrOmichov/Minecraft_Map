@@ -24,10 +24,12 @@ function interact(event){
 				player.message(breakfast[dialogNumber])
 				world.getStoreddata().put('dialogNumber', dialogNumber + 1)
 				if (dialogNumber == breakfast.length - 1) {
-					world.getStoreddata().put('dialogControl', '')
+					world.getStoreddata().put('dialogControl', 'Roalvi')
 					world.getStoreddata().put('dialogNumber', 0)
-					if (!player.hasActiveQuest(1))
+					if (!player.hasActiveQuest(1)){
 						player.startQuest(1)
+						world.setBlock(-351, 29, -402, 'minecraft:redstone_block', 1)
+					}
 				}
 			}
 			break;
